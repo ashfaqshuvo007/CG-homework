@@ -40,7 +40,7 @@ static void display(void)
 
   int i=0;
   glColor4f(Color1,Color2, Color3,1);
-  glPointSize(10);
+  glPointSize(5);
   glBegin(GL_POINTS);
   for( i=0;i<=100;i++)
   {
@@ -49,6 +49,10 @@ static void display(void)
         glVertex2f(100+i,200);  // top arm
         glVertex2f(200,200+i);  // left arm
         glVertex2f(100+i,300);  // bottom arm
+
+        //creating the diagonals inside the square.
+        glVertex2f(100+i,200+i); // left diagonal
+        glVertex2f(100+i,300-i); // right diagonal
 
   }
   glEnd();
